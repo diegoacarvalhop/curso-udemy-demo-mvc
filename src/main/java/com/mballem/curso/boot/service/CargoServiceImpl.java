@@ -2,6 +2,8 @@ package com.mballem.curso.boot.service;
 
 import com.mballem.curso.boot.domain.Cargo;
 import com.mballem.curso.boot.repository.CargoRepository;
+import com.mballem.curso.boot.util.PaginacaoUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,5 +51,10 @@ public class CargoServiceImpl implements CargoService {
         }
         return true;
     }
+
+	@Override
+	public PaginacaoUtil<Cargo> buscarPorPagina(int pagina, String direcao) {
+		return repository.buscaPaginada(pagina, direcao);
+	}
 
 }

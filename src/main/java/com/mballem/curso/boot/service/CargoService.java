@@ -1,6 +1,7 @@
 package com.mballem.curso.boot.service;
 
 import com.mballem.curso.boot.domain.Cargo;
+import com.mballem.curso.boot.util.PaginacaoUtil;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface CargoService {
 
     boolean cargoTemFuncionarios(Long id);
 
+    public PaginacaoUtil<Cargo> buscarPorPagina(int pagina, String direcao);
+    
 }
